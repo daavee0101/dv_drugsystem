@@ -18,6 +18,7 @@ Config.UseProp = true -- true = Prop | false = DrawMarker
 Config.EnableTable = true -- true = players can place workbench for crafting | false = they can't do this 
 
 Config.SeedPrice = 75
+Config.GrowingDuration = 50000 -- time in ms (1000 = 1 sec)
 
 Config.PedModel = "s_m_y_blackops_02"
 

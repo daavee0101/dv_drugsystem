@@ -12,6 +12,8 @@
 
 - Farming, Use, Sell
 
+- Animations and progbars 
+
 - Realistic progress
 
 - Clean and easy usage

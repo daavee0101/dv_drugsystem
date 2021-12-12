@@ -6,6 +6,8 @@ Config.EnableLog = true
 Config.WebhookImg = "https://i.imgur.com/CyFGInF.png"
 Config.Webhook = "webhook"
 
+Config.Locale = "hu"
+
 Config.EnableBlips = true
 Config.EnableInfoBlips = true
 

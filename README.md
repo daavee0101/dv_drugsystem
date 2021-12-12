@@ -1,6 +1,6 @@
 # dv_drugsystem
 
-- ESX Drugsytem for roleplay servers
+- ESX Drugsystem for roleplay servers
 
 - Configurable in config.lua
 

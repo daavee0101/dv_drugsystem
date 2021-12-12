@@ -376,8 +376,7 @@ local TimerStart = false
 
 RegisterNetEvent('dv_extradrugs:plantwatered')
 AddEventHandler('dv_extradrugs:plantwatered', function()
-	-- procent(50000)
-	procent(2500)
+	procent(Config.GrowingDuration)
 	local ertek = math.random(1,100)
 	if ertek > 10 then
 		Notification("Az ültetmény megérett")

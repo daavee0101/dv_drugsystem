@@ -253,25 +253,25 @@ AddEventHandler('dv_extradrugs:startPlanting', function()
 	end
 end)
 
-RegisterCommand('teszt', function(source)
-	local playerPed = PlayerPedId()
-	tablePozi = GetEntityCoords(playerPed)
-	if Config.EnableTable then
-	if not placed then
-		if Config.EnableLog then  
-			TriggerServerEvent('dv_extradrugs:LogTable')
-		end
-			local model2 = loadModel(GetHashKey("prop_tool_bench02"))
-			local tableProp = CreateObject(model2, tablePozi, true, false, false)
-			PlaceObjectOnGroundProperly(tableProp)
-			SetEntityHeading(model2, GetEntityHeading(PlayerPedId()))
-			FreezeEntityPosition(tableProp, true)
-			placed = true
-		else
-			Notification("Már van egy munkaasztalod!") 
-		end
-	end
-end)
+-- RegisterCommand('teszt', function(source)
+-- 	local playerPed = PlayerPedId()
+-- 	tablePozi = GetEntityCoords(playerPed)
+-- 	if Config.EnableTable then
+-- 	if not placed then
+-- 		if Config.EnableLog then  
+-- 			TriggerServerEvent('dv_extradrugs:LogTable')
+-- 		end
+-- 			local model2 = loadModel(GetHashKey("prop_tool_bench02"))
+-- 			local tableProp = CreateObject(model2, tablePozi, true, false, false)
+-- 			PlaceObjectOnGroundProperly(tableProp)
+-- 			SetEntityHeading(model2, GetEntityHeading(PlayerPedId()))
+-- 			FreezeEntityPosition(tableProp, true)
+-- 			placed = true
+-- 		else
+-- 			Notification("Már van egy munkaasztalod!") 
+-- 		end
+-- 	end
+-- end)
 
 RegisterNetEvent('dv_extradrugs:addTable')
 AddEventHandler('dv_extradrugs:addTable', function()
@@ -396,8 +396,7 @@ local TimerStart = false
 
 RegisterNetEvent('dv_extradrugs:plantwatered')
 AddEventHandler('dv_extradrugs:plantwatered', function()
-	-- procent(50000)
-	procent(2500)
+	procent(Config.GrowingDuration)
 	local ertek = math.random(1,100)
 	if ertek > 10 then
 		Notification("Az ültetmény megérett")

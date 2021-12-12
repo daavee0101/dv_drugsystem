@@ -6,6 +6,20 @@
 
 - Open source
 
+- Props or markers
+
+- Custom effects
+
+- Farming, Use, Sell
+
+- Realistic progress
+
+- Clean and easy usage
+
+- Configurable Locations & NPCs
+
+- RolePlay ready, LSPD alert (change in config), prices
+
 - Optimised (0.07ms - 0.18ms)
 
 - Tested on ESX 1.1 and ESX 1.2 (+ also works with limit and weight system)

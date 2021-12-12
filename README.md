@@ -12,6 +12,8 @@
 
 - Farming, Use, Sell
 
+- Job whitelist and blacklist
+
 - Animations and progbars 
 
 - Realistic progress

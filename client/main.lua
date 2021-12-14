@@ -804,8 +804,9 @@ end)
 RegisterNetEvent('dv_extradrugs:effect')
 AddEventHandler('dv_extradrugs:effect', function(type)
 	local ped = PlayerPedId()
-	local ertek = math.random(1,100)
-	if ertek > 4 then
+	local health = GetEntityMaxHealth(ped)
+	local dieErtek = math.random(1,100)
+	if dieErtek > Config.DieRate then
 		if type == "speed" then 
 			if Effects.Speed.speed ~= false then 
     			SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Speed.speed)
@@ -817,7 +818,7 @@ AddEventHandler('dv_extradrugs:effect', function(type)
     			SetGravityLevel(3)
 			end
 			if Effects.Speed.heal ~= false then 
-    			SetEntityHealth(ped, Effects.Speed.heal)
+    			SetEntityHealth(ped, health)
 			end
 			if Effects.Speed.armor ~= false then 
     			AddArmourToPed(ped, Effects.Speed.armor)
@@ -835,7 +836,7 @@ AddEventHandler('dv_extradrugs:effect', function(type)
     			SetGravityLevel(3)
 			end
 			if Effects.Lsd.heal ~= false then 
-    			SetEntityHealth(ped, Effects.Lsd.heal)
+    			SetEntityHealth(ped, health)
 			end
 			if Effects.Lsd.armor ~= false then 
     			AddArmourToPed(ped, Effects.Lsd.armor)
@@ -853,7 +854,7 @@ AddEventHandler('dv_extradrugs:effect', function(type)
     			SetGravityLevel(3)
 			end
 			if Effects.Marihuana.heal ~= false then 
-    			SetEntityHealth(ped, Effects.Marihuana.heal)
+    			SetEntityHealth(ped, health)
 			end
 			if Effects.Marihuana.armor ~= false then 
     			AddArmourToPed(ped, Effects.Marihuana.armor)
@@ -871,7 +872,7 @@ AddEventHandler('dv_extradrugs:effect', function(type)
     			SetGravityLevel(3)
 			end
 			if Effects.Meth.heal ~= false then 
-    			SetEntityHealth(ped, Effects.Meth.heal)
+    			SetEntityHealth(ped, health)
 			end
 			if Effects.Meth.armor ~= false then 
     			AddArmourToPed(ped, Effects.Meth.armor)
@@ -889,7 +890,7 @@ AddEventHandler('dv_extradrugs:effect', function(type)
     			SetGravityLevel(3)
 			end
 			if Effects.Weed.heal ~= false then 
-    			SetEntityHealth(ped, Effects.Weed.heal)
+    			SetEntityHealth(ped, health)
 			end
 			if Effects.Weed.armor ~= false then 
     			AddArmourToPed(ped, Effects.Weed.armor)
@@ -902,12 +903,12 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 		 	end
 		 	if Effects.Kokain.screenEffect ~= false then 
 				effect()
-			 end
+			end
 		 	if Effects.Kokain.changeGravity ~= false then 
 				SetGravityLevel(3)
 		 	end
 		 	if Effects.Kokain.heal ~= false then 
-				SetEntityHealth(ped, Effects.Kokain.heal)
+				SetEntityHealth(ped, health)
 		 	end
 		 	if Effects.Kokain.armor ~= false then 
 				AddArmourToPed(ped, Effects.Kokain.armor)

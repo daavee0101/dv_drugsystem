@@ -1,4 +1,4 @@
-Locales ['hu'] = {
+Locales ['en'] = {
 	['not_enough_money']        = 'You dont have enough money!',
 	['not_enough_item']     	= 'You dont have enough material to make it!',
 	['not_allowed']      	    = 'You cant do that!',

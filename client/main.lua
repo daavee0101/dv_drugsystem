@@ -877,17 +877,20 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 			Citizen.Wait(Effects.Weed.duration)
 			pauseEffect()
 		elseif type == "kokain" then
-			print(Effects.Kokain.speed)
 			if Effects.Kokain.speed ~= false then 
-    			SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Kokain.speed)
-			elseif Effects.Kokain.screenEffect ~= false then 
-    			effect()
-			elseif Effects.Kokain.changeGravity ~= false then 
-    			SetGravityLevel(3)
-			elseif Effects.Kokain.heal ~= false then 
-    			SetEntityHealth(ped, Effects.Kokain.heal)
-			elseif Effects.Kokain.armor ~= false then 
-    			AddArmourToPed(ped, Effects.Kokain.armor)
+    			   SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Kokain.speed)
+			end
+			if Effects.Kokain.screenEffect ~= false then 
+    			   effect()
+			end
+			if Effects.Kokain.changeGravity ~= false then 
+    			   SetGravityLevel(3)
+			end
+			if Effects.Kokain.heal ~= false then 
+    			   SetEntityHealth(ped, Effects.Kokain.heal)
+			end
+			if Effects.Kokain.armor ~= false then 
+    			   AddArmourToPed(ped, Effects.Kokain.armor)
 			end
 			Citizen.Wait(Effects.Kokain.duration)
 			pauseEffect()

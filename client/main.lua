@@ -809,13 +809,17 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 		if type == "speed" then 
 			if Effects.Speed.speed ~= false then 
     			SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Speed.speed)
-			elseif Effects.Speed.screenEffect ~= false then 
+			end
+			if Effects.Speed.screenEffect ~= false then 
     			effect()
-			elseif Effects.Speed.changeGravity ~= false then 
+			end
+			if Effects.Speed.changeGravity ~= false then 
     			SetGravityLevel(3)
-			elseif Effects.Speed.heal ~= false then 
+			end
+			if Effects.Speed.heal ~= false then 
     			SetEntityHealth(ped, Effects.Speed.heal)
-			elseif Effects.Speed.armor ~= false then 
+			end
+			if Effects.Speed.armor ~= false then 
     			AddArmourToPed(ped, Effects.Speed.armor)
 			end
 			Citizen.Wait(Effects.Speed.duration)
@@ -823,13 +827,17 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 		elseif type == "lsd" then
 			if Effects.Lsd.speed ~= false then 
     			SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Lsd.speed)
-			elseif Effects.Lsd.screenEffect ~= false then 
+			end
+			if Effects.Lsd.screenEffect ~= false then 
     			effect()
-			elseif Effects.Lsd.changeGravity ~= false then 
+			end
+			if Effects.Lsd.changeGravity ~= false then 
     			SetGravityLevel(3)
-			elseif Effects.Lsd.heal ~= false then 
+			end
+			if Effects.Lsd.heal ~= false then 
     			SetEntityHealth(ped, Effects.Lsd.heal)
-			elseif Effects.Lsd.armor ~= false then 
+			end
+			if Effects.Lsd.armor ~= false then 
     			AddArmourToPed(ped, Effects.Lsd.armor)
 			end
 			Citizen.Wait(Effects.Lsd.duration)
@@ -837,13 +845,17 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 		elseif type == "marihuana" then
 			if Effects.Marihuana.speed ~= false then 
     			SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Marihuana.speed)
-			elseif Effects.Marihuana.screenEffect ~= false then 
+			end
+			if Effects.Marihuana.screenEffect ~= false then 
     			effect()
-			elseif Effects.Marihuana.changeGravity ~= false then 
+			end
+			if Effects.Marihuana.changeGravity ~= false then 
     			SetGravityLevel(3)
-			elseif Effects.Marihuana.heal ~= false then 
+			end
+			if Effects.Marihuana.heal ~= false then 
     			SetEntityHealth(ped, Effects.Marihuana.heal)
-			elseif Effects.Marihuana.armor ~= false then 
+			end
+			if Effects.Marihuana.armor ~= false then 
     			AddArmourToPed(ped, Effects.Marihuana.armor)
 			end
 			Citizen.Wait(Effects.Marihuana.duration)
@@ -851,13 +863,17 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 		elseif type == "meth" then
 			if Effects.Meth.speed ~= false then 
     			SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Meth.speed)
-			elseif Effects.Meth.screenEffect ~= false then 
+			end
+			if Effects.Meth.screenEffect ~= false then 
     			effect()
-			elseif Effects.Meth.changeGravity ~= false then 
+			end
+			if Effects.Meth.changeGravity ~= false then 
     			SetGravityLevel(3)
-			elseif Effects.Meth.heal ~= false then 
+			end
+			if Effects.Meth.heal ~= false then 
     			SetEntityHealth(ped, Effects.Meth.heal)
-			elseif Effects.Meth.armor ~= false then 
+			end
+			if Effects.Meth.armor ~= false then 
     			AddArmourToPed(ped, Effects.Meth.armor)
 			end
 			Citizen.Wait(Effects.Meth.duration)
@@ -865,40 +881,44 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 		elseif type == "weed" then
 			if Effects.Weed.speed ~= false then 
     			SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Weed.speed)
-			elseif Effects.Weed.screenEffect ~= false then 
+			end
+			if Effects.Weed.screenEffect ~= false then 
     			effect()
-			elseif Effects.Weed.changeGravity ~= false then 
+			end
+			if Effects.Weed.changeGravity ~= false then 
     			SetGravityLevel(3)
-			elseif Effects.Weed.heal ~= false then 
+			end
+			if Effects.Weed.heal ~= false then 
     			SetEntityHealth(ped, Effects.Weed.heal)
-			elseif Effects.Weed.armor ~= false then 
+			end
+			if Effects.Weed.armor ~= false then 
     			AddArmourToPed(ped, Effects.Weed.armor)
 			end
 			Citizen.Wait(Effects.Weed.duration)
 			pauseEffect()
 		elseif type == "kokain" then
 			if Effects.Kokain.speed ~= false then 
-    			   SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Kokain.speed)
-			end
-			if Effects.Kokain.screenEffect ~= false then 
-    			   effect()
-			end
-			if Effects.Kokain.changeGravity ~= false then 
-    			   SetGravityLevel(3)
-			end
-			if Effects.Kokain.heal ~= false then 
-    			   SetEntityHealth(ped, Effects.Kokain.heal)
-			end
-			if Effects.Kokain.armor ~= false then 
-    			   AddArmourToPed(ped, Effects.Kokain.armor)
-			end
+				SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Kokain.speed)
+		 	end
+		 	if Effects.Kokain.screenEffect ~= false then 
+				effect()
+			 end
+		 	if Effects.Kokain.changeGravity ~= false then 
+				SetGravityLevel(3)
+		 	end
+		 	if Effects.Kokain.heal ~= false then 
+				SetEntityHealth(ped, Effects.Kokain.heal)
+		 	end
+		 	if Effects.Kokain.armor ~= false then 
+				AddArmourToPed(ped, Effects.Kokain.armor)
+		 	end
 			Citizen.Wait(Effects.Kokain.duration)
 			pauseEffect()
 		end
 	else 
 		SetEntityHealth(PlayerPedId(), 0)
 		TriggerServerEvent('dv_extradrugs:die')
-                pauseEffect()
+		pauseEffect()
 		Notification(_U('use_failed'))
 	end
 end)

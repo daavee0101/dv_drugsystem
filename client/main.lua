@@ -898,6 +898,7 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 	else 
 		SetEntityHealth(PlayerPedId(), 0)
 		TriggerServerEvent('dv_extradrugs:die')
+                pauseEffect()
 		Notification(_U('use_failed'))
 	end
 end)

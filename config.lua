@@ -22,6 +22,7 @@ Config.EnableTable = true -- true = players can place workbench for crafting | f
 Config.SeedPrice = 75
 Config.GrowingDuration = 500 -- time in ms (1000 = (1 sec = 1%))
 Config.EffectDuration = 50000 -- time in ms
+Config.DieRate = 5 -- when you use drugs character can die, you can change the dieRate (1-100) or if you want use just set to false
 
 Config.PedModel = "s_m_y_blackops_02"
 

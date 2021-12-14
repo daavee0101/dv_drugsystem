@@ -357,10 +357,10 @@ ESX.RegisterUsableItem('menta', function(source)
 	TriggerClientEvent('dv_extradrugs:clear', source)
 end)
 
-ESX.RegisterUsableItem('table', function(source)
+ESX.RegisterUsableItem('brew', function(source)
 	xPlayer = ESX.GetPlayerFromId(source)
 	if Config.EnableTable then 
-		xPlayer.removeInventoryItem("table", 1)
+		xPlayer.removeInventoryItem("brew", 1)
 		TriggerClientEvent('dv_extradrugs:addTable', source)
 	end
 end)

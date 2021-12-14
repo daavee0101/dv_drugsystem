@@ -5,11 +5,12 @@ Citizen.CreateThread(function()
 		TriggerEvent(Config.SharedObject, function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
-  
+
 	while ESX.GetPlayerData().job == nil do
-		Citizen.Wait(11)
+		Citizen.Wait(10)
 	end
-	PlayerData = ESX.GetPlayerData()
+
+	ESX.PlayerData = ESX.GetPlayerData()
 end)
 
 local watered = false
@@ -19,15 +20,15 @@ local menuben = false
 local eladas = false
 local TimerStart = false
 
-RegisterNetEvent("esx:playerLoaded")
-AddEventHandler("esx:playerLoaded", function(xPlayer)
-    while ESX == nil do Wait(0) end
-	PlayerData = xPlayer
+RegisterNetEvent('esx:playerLoaded')
+AddEventHandler('esx:playerLoaded', function(xPlayer)
+	while ESX == nil do Wait(0) end
+	ESX.PlayerData = xPlayer
 end)
 
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
-	PlayerData.job = job
+	ESX.PlayerData.job = job
 end)
 
 RegisterNetEvent('dv_extradrugs:notenough')
@@ -466,7 +467,7 @@ Citizen.CreateThread(function()
         local pos = GetEntityCoords(GetPlayerPed(-1))
 				for _, item in pairs(Config.PedLocations) do
         			if (GetDistanceBetweenCoords(pos, item.x, item.y, item.z, true) < 3) then
-						if PlayerData.job.name ~= Config.PoliceJob then
+						if ESX.PlayerData.job and ESX.PlayerData.job.name ~= Config.PoliceJob then
 						drawOn(1.265, 1.562, 1.0,1.0,0.35, "~w~[E] " .. _U('trader_npc'), 255, 255, 255, 255)
             			DrawMarker(6, item.x, item.y, item.z - 1.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 1.5, 1.5, 1.5, 255, 0, 0, 100, false, false, 2, false, false, false, false)
             			if IsControlJustReleased(1, 38) then
@@ -541,7 +542,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 		local pos = GetEntityCoords(GetPlayerPed(-1))
-		if PlayerData.job.name ~= Config.PoliceJob then
+		if ESX.PlayerData.job and ESX.PlayerData.job.name ~= Config.PoliceJob then
 			for _, item2 in pairs(Config.BrewingLocations) do
 			if (GetDistanceBetweenCoords(pos, item2.x, item2.y, item2.z, true) < 1.5) and not (GetDistanceBetweenCoords(pos, tablePozi, true) < 1.5) then
 				drawOn(1.235, 1.542, 1.0,1.0,0.35, "~w~[E] " .. _U('brewing') .." | [H] ".. _U('packing') .." | [G] ".. _U('craft'), 255, 255, 255, 255)

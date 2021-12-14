@@ -921,7 +921,7 @@ AddEventHandler('dv_extradrugs:effect', function(type)
 		TriggerServerEvent('dv_extradrugs:die')
 		pauseEffect()
 		Notification(_U('use_failed'))
-	end
+    end
 end)
 
 function effect()

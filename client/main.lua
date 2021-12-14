@@ -805,7 +805,7 @@ RegisterNetEvent('dv_extradrugs:effect')
 AddEventHandler('dv_extradrugs:effect', function(type)
 	local ped = PlayerPedId()
 	local ertek = math.random(1,100)
-	if ertek > 10 then
+	if ertek > 4 then
 		if type == "speed" then 
 			if Effects.Speed.speed ~= false then 
     			SetRunSprintMultiplierForPlayer(PlayerId(),Effects.Speed.speed)

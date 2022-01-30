@@ -2,9 +2,8 @@ Config = {}
 
 Config.SharedObject = 'esx:getSharedObject'
 
-Config.EnableLog = true
+Config.EnableLog = true -- set webhook in server.lua
 Config.WebhookImg = "https://i.imgur.com/CyFGInF.png"
-Config.Webhook = "Change in server.lua"
 
 Config.Locale = "en"
 

@@ -2,7 +2,7 @@ ESX = nil
 
 TriggerEvent(Config.SharedObject, function(obj) ESX = obj end)
 
-local Webhook = Config.Webhook
+local Webhook = "webhook"
 local Profile = Config.WebhookImg
 
 RegisterServerEvent('dv_extradrugs:sellItem')

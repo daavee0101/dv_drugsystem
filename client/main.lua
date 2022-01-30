@@ -170,8 +170,8 @@ end
 end)
 
 local ultetes
-local pozi = 1.0, 1.0, 1.0
-local tablePozi = 1.0, 1.0, 1.0
+local pozi = false
+local tablePozi = false
 local ultetett = false
 
 function loadModel(model)
@@ -244,8 +244,11 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
 		local pos = GetEntityCoords(GetPlayerPed(-1))
 		if not Config.UseProp then
-			DrawMarker(2, pozi, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 65, 255, 65, 100, false, true, 2, false, nil, nil, false)
+			if pozi ~= false then  
+				DrawMarker(2, pozi, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 65, 255, 65, 100, false, true, 2, false, nil, nil, false)
+			end
 		end
+		if pozi ~= false then  
 		if (GetDistanceBetweenCoords(pos, pozi, true) < 1.5) then
 			drawOn(1.235, 1.542, 1.0,1.0,0.35, "~w~[E] " .. _U('water') .." | [H] ".. _U('pickup') .." | [X] ".. _U('destroy'), 255, 255, 255, 255)
 			if IsControlJustReleased(1, 38) then        
@@ -259,13 +262,14 @@ Citizen.CreateThread(function()
 				TriggerEvent('dv_extradrugs:pickup')
 			end
 			if IsControlJustReleased(1, 105) then        
-				pozi = 1.0, 1.0, 1.0
+				pozi = false
 				FreezeEntityPosition(prop1, false)
 				FreezeEntityPosition(prop2, false)
 				DeleteObject(prop1)
 				DeleteObject(prop2)
 				ultetett = false
 				ESX.UI.Menu.CloseAll()
+			end
 			end
 		end
 	end
@@ -343,11 +347,13 @@ AddEventHandler('dv_extradrugs:plantwatered', function()
 	if ertek > 10 then
 		Notification(_U('plant_success'))
 		if Config.UseProp then
+			if pozi ~= false then  
 			local model = loadModel(GetHashKey("prop_weed_01"))
 			local prop2 = CreateObject(model, pozi, true, false, false)
 			PlaceObjectOnGroundProperly(prop2)
 			FreezeEntityPosition(prop1, false)
 			FreezeEntityPosition(prop2, true)
+			end
 		end
 		megerett = true
 	else 
@@ -391,7 +397,7 @@ AddEventHandler('dv_extradrugs:pickup', function()
 		FreezeEntityPosition(ped, false)
 		TriggerEvent('dv_extradrugs:giveItem')
 		for _, item in pairs(Config.FarmLocations) do
-			pozi = 1.0, 1.0, 1.0
+			pozi = false
 			FreezeEntityPosition(prop1, false)
 			FreezeEntityPosition(prop2, false)
 			DeleteObject(prop1)
@@ -401,7 +407,7 @@ AddEventHandler('dv_extradrugs:pickup', function()
 	elseif not megerett and not romlott then
 		Notification(_U('plant_in_progress')) 
 		for _, item in pairs(Config.FarmLocations) do
-			pozi = 1.0, 1.0, 1.0
+			pozi = false
 			FreezeEntityPosition(prop1, false)
 			FreezeEntityPosition(prop2, false)
 			DeleteObject(prop1)
@@ -411,7 +417,7 @@ AddEventHandler('dv_extradrugs:pickup', function()
 	elseif romlott and not megerett then 
 		Notification(_U('plant_failed')) 
 		for _, item in pairs(Config.FarmLocations) do
-			pozi = 1.0, 1.0, 1.0
+			pozi = false
 			FreezeEntityPosition(prop1, false)
 			FreezeEntityPosition(prop2, false)
 			DeleteObject(prop1)
@@ -544,6 +550,7 @@ Citizen.CreateThread(function()
 		local pos = GetEntityCoords(GetPlayerPed(-1))
 		if ESX.PlayerData.job and ESX.PlayerData.job.name ~= Config.PoliceJob then
 			for _, item2 in pairs(Config.BrewingLocations) do
+			if tablePozi ~= false then  
 			if (GetDistanceBetweenCoords(pos, item2.x, item2.y, item2.z, true) < 1.5) and not (GetDistanceBetweenCoords(pos, tablePozi, true) < 1.5) then
 				drawOn(1.235, 1.542, 1.0,1.0,0.35, "~w~[E] " .. _U('brewing') .." | [H] ".. _U('packing') .." | [G] ".. _U('craft'), 255, 255, 255, 255)
 				DrawMarker(6, item2.x, item2.y, item2.z - 1.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 1.5, 1.5, 1.5, 255, 0, 0, 100, false, false, 2, false, false, false, false)
@@ -584,11 +591,12 @@ Citizen.CreateThread(function()
 					if not menuben then  
 						FreezeEntityPosition(prop2, false)
 						DeleteObject(prop2)
-						tablePozi = 1.0, 1.0, 1.0
+						tablepozi = false
 						placed = false
 						TriggerServerEvent('dv_extradrugs:giveItemToPlayer', "table", 1)
 						ESX.UI.Menu.CloseAll()
 					end
+				end
 				end
 			end
 		  end
